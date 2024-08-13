@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *, *:before, *:after {
     box-sizing: border-box;
   }
@@ -17,12 +19,13 @@
     min-height: 100vh;
     background-color: rgb(30, 0, 47);
     margin: 0; /* Ensure no default margin */
+    font-family:  "Open Sans", sans-serif;
 }
 
 /* General Navbar Styling */
 nav {
     background-color: rgba(0, 0, 0, 0); /* Transparent background */
-    padding: 20px;
+    padding: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,42 +46,58 @@ nav .flex.space-x-6 {
     flex-grow: 0; /* Prevent it from occupying all available space */
     gap: 20px; /* Space between links */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for rounded background */
-    border-radius: 20px; /* Rounded corners */
+    border-radius: 40px; /* Rounded corners */
     padding: 10px 20px; /* Padding inside the rounded background */
     background-color: rgba(255, 255, 255, 0.05); /* Light transparent background */
     width: fit-content; /* Only takes up as much space as the content inside */
     margin: 0 auto; /* Center it within the navbar */
+    height: 60px;
 }
+
 
 
 nav .flex.space-x-6 a {
     color: #fff; /* White color for the links */
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transition: color 0.3s ease;
+    padding-top: 1% ;
 }
 
 nav .flex.space-x-6 a:hover {
-    color: #fff; /* Keep the hover effect but with a slight difference if needed */
+    color: #bf00ff; /* Keep the hover effect but with a slight difference if needed */
 }
 
 /* Contact Button (right side) */
 nav button {
     border: 1px solid rgba(255, 255, 255, 0.2); /* Light border around the button */
-    border-radius: 20px; /* Rounded corners for the button */
+    border-radius: 40px; /* Rounded corners for the button */
     padding: 10px 20px; /* Padding inside the button */
     background-color: rgba(255, 255, 255, 0.05); /* Light transparent background */
     color: #fff; /* White text color */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;   
+    font-size: 1.1rem;
+    padding-top: 1%;
+    height: 50px;
 }
 
 nav button:hover {
-    background-color: rgba(255, 255, 255, 0.15); /* Slightly less transparent on hover */
+    background-color: #bf00ff;; /* Slightly less transparent on hover */
 }
 /* Drag Box */
 
 /* Section Styling */
+h1{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+  color:#ffffff;
+  font-weight: 700;
+  font-size: 50px;
+  font-family: "Poppins", sans-serif;
+}
 #hero {
     display: flex;
     justify-content: center;
@@ -93,6 +112,7 @@ nav button:hover {
     justify-content: center;
     height: fit-content;
     width: fit-content;
+    padding-bottom: 15%;
 }
 
 /* File Upload Label */
@@ -102,7 +122,7 @@ nav button:hover {
     padding: 30px 100px; /* Increased padding for more height */
     border-radius: 40px;
     border: 2px dashed #000000;
-    box-shadow: 0px 0px 300px -25px #F1EFF2;
+    box-shadow: 0px 0px 300px -25px #ffffff;
 }
 
 /* SVG Icon Styling */
@@ -242,7 +262,7 @@ nav button:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  animation: marquee 15s linear infinite; /* Animation for continuous scroll */
+  animation: marquee-reverse  15s linear infinite; /* Animation for continuous scroll */
 }
 
 .marquee-content img,
@@ -265,7 +285,7 @@ nav button:hover {
 }
 
 /* Keyframes for Reverse Marquee Animation */
-@keyframes marquee-reverse {
+@keyframes marquee-content1 {
   from {
       transform: translateX(-100%);
   }
