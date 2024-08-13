@@ -206,35 +206,78 @@ nav button:hover {
   
   
   /* Marquee Styling */
-  .marquee {
-    width: 700px;
-    overflow: hidden; /* Hide the overflowing content */
-    padding: 10px 0; /* Padding around the marquee */
-  }
-  
-  .marquee-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    animation: marquee 15s linear infinite; /* Animation for continuous scroll */
+.marquee {
+  width: 700px;
+  overflow: hidden; /* Hide the overflowing content */
+  padding: 10px 0; /* Padding around the marquee */
+  position: relative; /* Make it a containing block for the pseudo-elements */
 }
 
-  .marquee-content img {
-    height: 50px; /* Set height for logos */
-    padding: 0 15px; /* Space between logos */
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Add a subtle shadow to the logos */
-  }
-  
-  /* Keyframes for Marquee Animation */
-  @keyframes marquee {
-    from {
+/* Apply a gradient overlay for the fading effect */
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px; /* Width of the fading area */
+  height: 100%;
+  z-index: 2;
+  pointer-events: none; /* Make sure these elements don't block clicks */
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, rgb(30, 0, 47), rgba(255, 255, 255, 0));
+  border-radius: 20%;
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, rgb(30, 0, 47), rgba(255, 255, 255, 0));
+  border-radius: 20%;
+}
+
+.marquee-content,
+.marquee-content1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  animation: marquee 15s linear infinite; /* Animation for continuous scroll */
+}
+
+.marquee-content img,
+.marquee-content1 img {
+  height: 50px; /* Set height for logos */
+  padding: 0 15px; /* Space between logos */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Add a subtle shadow to the logos */
+  background-blend-mode: multiply; /* Blend mode */
+  background-size: cover;
+}
+
+/* Keyframes for Marquee Animation */
+@keyframes marquee {
+  from {
       transform: translateX(100%);
-    }
-    to {
-      transform: translateX(-100%);
-    }
   }
-  
+  to {
+      transform: translateX(-100%);
+  }
+}
+
+/* Keyframes for Reverse Marquee Animation */
+@keyframes marquee-reverse {
+  from {
+      transform: translateX(-100%);
+  }
+  to {
+      transform: translateX(100%);
+  }
+}
+
+/* Apply reverse animation for the second marquee */
+.marquee-content1 {
+  animation: marquee-reverse 15s linear infinite;
+}
 
 /* Footer */
 
