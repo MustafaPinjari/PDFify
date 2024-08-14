@@ -19,7 +19,7 @@
     min-height: 100vh;
     background-color: rgb(30, 0, 47);
     margin: 0; /* Ensure no default margin */
-    font-family:  "Open Sans", sans-serif;
+    font-family:  "Poppins", sans-serif;
 }
 
 /* General Navbar Styling */
@@ -30,6 +30,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    height: 100px;
+    /* padding-bottom: 20%; */
 }
 
 /* Navbar Brand (left side) */
@@ -63,7 +65,11 @@ nav .flex.space-x-6 a {
     transition: color 0.3s ease;
     padding-top: 1% ;
 }
-
+nav  i{
+    font-size: 10px;
+    background-color: rgb(30, 0, 47);
+    display: none !important;
+}
 nav .flex.space-x-6 a:hover {
     color: #bf00ff; /* Keep the hover effect but with a slight difference if needed */
 }
@@ -87,8 +93,52 @@ nav button:hover {
 }
 /* Drag Box */
 
+@media screen and (max-width: 768px) {
+  nav .text-primary{
+    font-size: 25px;
+  }
+  nav .flex.space-x-6 {
+    display: none;
+  }
+    
+  nav i{
+    display: block !important;
+    font-size: 25px;
+    color: #fff;
+  }
+
+  nav button {
+    display: none;
+}
+
+  .he h1{
+    font-size: 27px !important;
+    padding-top: 20% !important;
+  }
+  #hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Takes up the full viewport height */
+    padding-bottom: 19%;
+}
+ul.footer__nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  padding: 30px 30px 20px 30px;
+  color: #ffffff;
+  background-color: rgb(30, 0, 47);
+  border-top: 1px solid #e5e5e5;
+}
+
+}
+/* Main section start here */
+
+
 /* Section Styling */
-h1{
+.he h1{
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -104,6 +154,21 @@ h1{
     align-items: center;
     height: 100vh; /* Takes up the full viewport height */
 }
+
+#hero iframe {
+  cursor: pointer;
+  background-color: #f8f8ff;
+  padding: 30px 20px;  /* Reduced padding to decrease overall height */
+  border-radius: 40px;
+  border: 2px dashed #000;
+  box-shadow: 0 0 300px -25px #fff;
+  height: 400px;  /* Adjusts height based on content */
+  max-height: 500px;  /* Ensures the iframe doesn't exceed a certain height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* File Upload Form */
 .file-upload-form {
@@ -160,148 +225,6 @@ h1{
     display: none;
 }
 
-
-/* Section Styling */
-/* Section Styling */
-#about-me {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 0; /* Add some padding for spacing around the section */
-  }
-  
-  /* About Container */
-  .about-container {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Space between the image and the card */
-    margin-bottom: 30px; /* Space between the card and marquee */
-  }
-  
-  /* Image Styling */
-  .about-image img {
-    border-radius: 8%; /* 8% border radius for the image */
-    height: 250px; /* Adjust the height of the image as needed */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
-  }
-  
-  /* Card Styling */
-  .card {
-    max-width: 540px;
-    width: 100%; /* Ensure the card takes up the full width within its max-width */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
-    border-radius: 10px; /* Rounded corners */
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent background for the card */
-    backdrop-filter: blur(10px); /* Optional: Adds a blur effect behind the card for better readability */
-    color: white; /* White text for better readability */
-  }
-  
-  /* Card Body Styling */
-  .card-body {
-    padding: 20px; /* Padding inside the card body */
-  }
-  
-  .card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px; /* Space between title and text */
-  }
-  
-  .card-text {
-    font-size: 1rem;
-  }
-  
-  .card-text small {
-    color: #ccc; /* Lighter color for the "last updated" text */
-  }
-
-  .social-icon {
-    width: 24px; /* Adjust the size as needed */
-    height: 24px; /* Adjust the size as needed */
-    margin: 0 8px; /* Space between icons */
-    vertical-align: middle; /* Align with text */
-  }
-  
-  
-  /* Marquee Styling */
-.marquee {
-  width: 700px;
-  overflow: hidden; /* Hide the overflowing content */
-  padding: 10px 0; /* Padding around the marquee */
-  position: relative; /* Make it a containing block for the pseudo-elements */
-}
-
-/* Apply a gradient overlay for the fading effect */
-.marquee::before,
-.marquee::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 100px; /* Width of the fading area */
-  height: 100%;
-  z-index: 2;
-  pointer-events: none; /* Make sure these elements don't block clicks */
-}
-
-.marquee::before {
-  left: 0;
-  background: linear-gradient(to right, rgb(30, 0, 47), rgba(255, 255, 255, 0));
-  border-radius: 20%;
-}
-
-.marquee::after {
-  right: 0;
-  background: linear-gradient(to left, rgb(30, 0, 47), rgba(255, 255, 255, 0));
-  border-radius: 20%;
-}
-
-.marquee-content,
-.marquee-content1 {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  animation: marquee-reverse  15s linear infinite; /* Animation for continuous scroll */
-}
-
-.marquee-content img,
-.marquee-content1 img {
-  height: 50px; /* Set height for logos */
-  padding: 0 15px; /* Space between logos */
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Add a subtle shadow to the logos */
-  background-blend-mode: multiply; /* Blend mode */
-  background-size: cover;
-}
-
-/* Keyframes for Marquee Animation */
-@keyframes marquee {
-  from {
-      transform: translateX(100%);
-  }
-  to {
-      transform: translateX(-100%);
-  }
-}
-
-/* Keyframes for Reverse Marquee Animation */
-@keyframes marquee-content1 {
-  from {
-      transform: translateX(-100%);
-  }
-  to {
-      transform: translateX(100%);
-  }
-}
-
-/* Apply reverse animation for the second marquee */
-.marquee-content1 {
-  animation: marquee-reverse 15s linear infinite;
-}
-
-/* Footer */
-
-  
   .footer {
     display: flex;
     flex-flow: row wrap;
@@ -426,5 +349,107 @@ h1{
     
     .footer__nav {
       flex: 2 0px;
+    }
+  }
+
+
+  .bubble {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+       box-shadow: inset 0 0 2rem rgba(var(--light), 1), 
+         inset 2rem 0 4rem rgba(var(--pink), 1),
+         inset -2rem 0 6rem rgba(var(--blue), 1),
+         inset 0 4rem 4rem rgba(var(--violet), 1),
+         inset 0 -2rem 2rem rgba(var(--yellow), 1),
+         inset 2rem -2rem 1rem rgba(var(--yellow), 1),
+         0 0 4rem rgba(var(--light), .2),
+         2rem 0 8rem rgba(var(--pink), var(--alpha)),
+         -2rem 0 8rem rgba(var(--blue), var(--alpha)),
+         0 4rem 8rem rgba(var(--violet), var(--alpha)),
+         0 -2rem 8rem rgba(var(--yellow), var(--alpha));
+    animation: floating 3s ease-in-out infinite;
+    cursor: pointer;
+  }
+  
+  .bubble.animated {
+    animation: rubber 1s linear;
+  }
+  
+  
+  .bubble::before,
+  .bubble::after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-radius: 100%;
+    transform: rotate(40deg);
+  }
+  
+  .bubble::before {
+    top: 2rem;
+    right: 2rem;
+    width: 5rem;
+    height: 2rem;
+    background-color: rgba(var(--light),1);
+    background: radial-gradient(closest-side, rgba(var(--light), .7) 50%, transparent 100%);
+  }
+  
+  .bubble::after {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 10rem;
+    height: 5rem;
+    background: radial-gradient(closest-side, rgba(var(--light), .3) 50%, transparent 100%);
+  }
+  
+  
+  @keyframes rubber {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+  
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+  
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+  
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+  
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+  
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+  
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  @keyframes floating {
+    from {
+      transform: translate(0, 0);
+    }
+    65% {
+      transform: translate(0, 1rem);
+    }
+    to {
+      transform: translate(0, 0);
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 10px;
     }
   }
