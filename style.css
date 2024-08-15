@@ -119,7 +119,7 @@ nav button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Takes up the full viewport height */
+    height: 80vh; /* Takes up the full viewport height */
     padding-bottom: 19%;
 }
 ul.footer__nav {
@@ -132,6 +132,8 @@ ul.footer__nav {
   background-color: rgb(30, 0, 47);
   border-top: 1px solid #e5e5e5;
 }
+
+
 
 }
 /* Main section start here */
@@ -170,59 +172,73 @@ ul.footer__nav {
 }
 
 
-/* File Upload Form */
+/* Default Styles for Desktop */
 .file-upload-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: fit-content;
-    width: fit-content;
-    padding-bottom: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: fit-content;
+  padding-bottom: 15%;
 }
 
-/* File Upload Label */
 .file-upload-label {
-    cursor: pointer;
-    background-color: #F8F8FF;
-    padding: 30px 100px; /* Increased padding for more height */
-    border-radius: 40px;
-    border: 2px dashed #000000;
-    box-shadow: 0px 0px 300px -25px #ffffff;
+  cursor: pointer;
+  background-color: #F8F8FF;
+  padding: 30px 100px;
+  border-radius: 40px;
+  border: 2px dashed #000000;
+  box-shadow: 0px 0px 300px -25px #ffffff;
 }
 
-/* SVG Icon Styling */
+
 .file-upload-label svg {
-    height: 200px;
-    fill: rgb(82, 82, 82);
-    margin-bottom: 20px;
-    margin-left: 20px;
+  height: 200px;
+  fill: rgb(82, 82, 82);
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
-/* Upload Design Container */
 .file-upload-design {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
-/* Browse Button Styling */
 .browse-button {
-    background-color: rgb(82, 82, 82);
-    padding: 10px 20px; /* Increased padding for larger button */
-    border-radius: 10px;
-    color: white;
-    transition: all 0.3s;
+  background-color: rgb(82, 82, 82);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  transition: all 0.3s;
 }
 
 .browse-button:hover {
-    background-color: rgb(14, 14, 14);
+  background-color: rgb(14, 14, 14);
 }
 
-/* Hide the file input */
 .file-upload-label input {
-    display: none;
+  display: none;
+}
+
+/* Responsive Styles for Mobile Devices */
+@media only screen and (max-width: 600px) {
+  .file-upload-label {
+      padding: 0px 80px; /* Reduced padding for mobile */
+      border-radius: 30px;
+  }
+
+  .file-upload-label svg {
+      height: 100px; /* Reduced icon size for mobile */
+      margin-bottom: 10px;
+      margin-left: 0px;
+  }
+
+  .browse-button {
+      padding: 8px 15px; /* Reduced button size for mobile */
+  }
 }
 
   .footer {
